@@ -1,43 +1,37 @@
 import "./App.css";
-import axios from "axios";
-import { useEffect, useState } from "react";
-import Posts from "./components/Posts";
-import Pagination from "./components/Pagination";
+
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+
+import Admin from "./Pages/Admin";
+import ErrorPage from "./Pages/ErrorPage";
+import Checking from "./Pages/Checking";
+import Profile from "./Pages/Profile";
+import Blogs from "./components/Blogs";
 
 function App() {
-  const [posts, setPosts] = useState([]);
-  const [loading, setLoading] = useState(false);
-  const [currentPage, setCurrentPage] = useState(1);
-  const [postsPerPage] = useState(10);
-
-  useEffect(() => {
-    const fetchPosts = async () => {
-      setLoading(true);
-      const res = await axios.get("https://jsonplaceholder.typicode.com/posts");
-      setPosts(res.data);
-      setLoading(false);
-    };
-
-    fetchPosts();
-  }, []);
-  // Get current posts
-  const indexOfLastPost = currentPage * postsPerPage;
-  const indexOfFirstPost = indexOfLastPost - postsPerPage;
-  const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
-
-  // Change page
-  const paginate = (pageNumber) => setCurrentPage(pageNumber);
-
   return (
-    <div className="container mt-5">
-      <h1 className="text-primary mb-3">My Blog</h1>
-      <Posts posts={currentPosts} loading={loading} />
-      <Pagination
-        postsPerPage={postsPerPage}
-        totalPosts={posts.length}
-        paginate={paginate}
-      />
-    </div>
+    <Router>
+      {/* Place for navbar it remains constant */}
+      <nav>
+        <Link to="/">Home</Link>
+        <Link to="/admin">Admin</Link>
+        <Link to="/checking">Check</Link>
+        <Link to="/profile">Profile</Link>
+        <Link to="/error">404</Link>
+      </nav>
+
+      <Routes>
+        <Route exact path="/" element={<Blogs />} />
+        <Route path="/admin/*" element={<Admin />} />
+        <Route path="/checking" element={<Checking />} />
+        <Route path="/profile" element={<p>This is profile Page</p>} />
+        <Route path="/profile/:id" element={<Profile />} />
+        {/* <Route path="*" element={<ErrorPage />} /> */}
+      </Routes>
+
+      {/* Place for footer */}
+      <footer>This is the footer of this page.</footer>
+    </Router>
   );
 }
 
