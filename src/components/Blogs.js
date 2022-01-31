@@ -1,45 +1,58 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import axios from "axios";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { useGetAllBlogsQuery } from "../services/BlogApi";
+
+import { Helmet } from "react-helmet";
+
 import Pagination from "./Pagination";
 import Posts from "./Posts";
+import "./Blogs.css";
 
 const Blogs = () => {
-  const [posts, setPosts] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const { data, isFetching } = useGetAllBlogsQuery();
+
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage] = useState(10);
 
-  useEffect(() => {
-    const fetchPosts = async () => {
-      setLoading(true);
-      const res = await axios.get("https://jsonplaceholder.typicode.com/posts");
-      setPosts(res.data);
-      setLoading(false);
-      console.log(res.data);
-    };
-
-    fetchPosts();
-  }, []);
   // Get current posts
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
-  const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
+  const currentPosts = data?.slice(indexOfFirstPost, indexOfLastPost);
 
   // Change page
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   return (
     <div>
-      <div className="container mt-5">
-        <h1 className="text-primary mb-3">My Blog</h1>
-        <Posts posts={currentPosts} loading={loading} />
-        <Pagination
-          postsPerPage={postsPerPage}
-          totalPosts={posts.length}
-          paginate={paginate}
+      <Helmet>
+        <title>Blogs Homepage</title>
+        <meta
+          name="All the latest news and contents."
+          content="Latest Blogs and news."
         />
+      </Helmet>
+      <div className="contnr mt-3">
+        <h1 className="blog mb-3">Blogs</h1>
+        <h3 className="sub-blog mb-5">All the latest news and contents.</h3>
+        <div className="contain-er">
+          <div className="tech_wrapper">
+            <h1>
+              <span>Explore</span> the <span> world </span> of{" "}
+              <span> tech.</span>
+            </h1>
+            <h3>where voices are shared through writings.</h3>
+          </div>
+          <div className="blog_wrapper">
+            <Posts posts={currentPosts} loading={isFetching} />
+          </div>
+        </div>
       </div>
+      <Pagination
+        postsPerPage={postsPerPage}
+        totalPosts={data?.length}
+        paginate={paginate}
+      />
     </div>
   );
 };

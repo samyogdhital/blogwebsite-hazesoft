@@ -1,0 +1,63 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+.edit_form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 600px;
+  width: 550px;
+  background-color: rgba(219, 240, 211, 0.527);
+  border-radius: 50px;
+}
+.form-contain-er {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.edit_form h1 {
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  line-height: 56px;
+  font-size: 51px;
+  color: #27ae60;
+}
+.form-contain-er input {
+  height: 50px;
+  width: 450px;
+  margin: 20px 0;
+  font-family: "Inter", sans-serif;
+}
+.form-contain-er label {
+  font-size: 25px;
+  margin: 10px 0;
+  font-family: "Inter", sans-serif;
+}
+.form-contain-er button {
+  margin-top: 20px;
+  font-family: "Inter", sans-serif;
+  color: white;
+  background-color: rgb(0, 174, 255);
+  border: 0;
+  padding: 10px 15px;
+  border-radius: 95px;
+  cursor: pointer;
+  border: 1px solid rgb(0, 174, 255);
+}
+.form-contain-er button:hover {
+  color: rgb(0, 174, 255);
+  background-color: white;
+  border: 1px solid rgb(0, 174, 255);
+}
+
+.textArea {
+  margin-top: 5px;
+  margin-bottom: 10px;
+  font-family: "Inter", sans-serif;
+}

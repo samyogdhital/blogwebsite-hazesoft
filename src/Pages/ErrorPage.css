@@ -1,0 +1,17 @@
+.edit_form h1 {
+  font-size: 70px !important;
+}
+.edit_form p {
+  font-size: 30px;
+}
+.edit_form button {
+  border: none;
+  padding: 9px 8px;
+  color: white;
+  background-color: #27ae60;
+  border-radius: 9px;
+}
+.edit_form button:hover {
+  color: #27ae60;
+  background-color: white;
+}

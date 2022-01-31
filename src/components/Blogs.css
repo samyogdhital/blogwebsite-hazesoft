@@ -1,0 +1,90 @@
+.blog {
+  font-family: Urbanist;
+  font-weight: 900;
+  line-height: 40px;
+  font-size: 36px;
+}
+.sub-blog {
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 400;
+  border-bottom: 1px solid #dfe1e5;
+}
+.contain-er {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+}
+@media only screen and (max-width: 768px) {
+  .contain-er {
+    flex-direction: column;
+  }
+}
+.tech_wrapper {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 300px;
+}
+@media only screen and (max-width: 768px) {
+  .tech_wrapper {
+    height: 90px;
+  }
+}
+@media only screen and (max-width: 465px) {
+  .tech_wrapper {
+    width: 100%;
+    margin-top: 50px;
+  }
+}
+
+.tech_wrapper h1 {
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  line-height: 56px;
+  font-size: 51px;
+}
+.tech_wrapper h3 {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  line-height: 36px;
+  font-size: 24px;
+}
+.tech_wrapper span {
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  line-height: 56px;
+  font-size: 51px;
+  color: #27ae60;
+}
+.blog_wrapper {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  border-left: 1px solid #dfe1e5;
+}
+@media only screen and (max-width: 768px) {
+  .blog_wrapper {
+    width: 100%;
+    margin-top: 30px;
+  }
+  .tech_wrapper h1 {
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+    line-height: 56px;
+    font-size: 35px;
+  }
+  .tech_wrapper h3 {
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    line-height: 36px;
+    font-size: 20px;
+  }
+}
+@media only screen and (max-width: 465px) {
+  .blog_wrapper {
+    width: 100%;
+    margin-top: 50px;
+  }
+}
