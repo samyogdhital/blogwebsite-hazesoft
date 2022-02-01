@@ -1,7 +1,8 @@
-# Getting Started with Create React App
+# Running this blog webapp
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### `git clone <Link>`
 
+Clone this project to your local environment through git clone.
 ## Available Scripts
 
 In the project directory,

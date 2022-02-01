@@ -1,6 +1,6 @@
 import React from "react";
-import { useEffect, useState } from "react";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { useState } from "react";
+// import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { useGetAllBlogsQuery } from "../services/BlogApi";
 import { useTranslation } from "react-i18next";
 
@@ -21,9 +21,6 @@ const Blogs = () => {
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
   const currentPosts = data?.slice(indexOfFirstPost, indexOfLastPost);
-
-  // Change page
-  const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   return (
     <div>
@@ -53,7 +50,7 @@ const Blogs = () => {
       <Pagination
         postsPerPage={postsPerPage}
         totalPosts={data?.length}
-        paginate={paginate}
+        setCurrentPage={setCurrentPage}
       />
     </div>
   );

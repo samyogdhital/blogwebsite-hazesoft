@@ -1,15 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { useEffect } from "react";
+
 import { useTranslation } from "react-i18next";
 
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Link,
-  useNavigate,
-} from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {
   useDeletePostMutation,
   useUpdatePostMutation,
@@ -50,7 +44,6 @@ const Posts = ({ posts, loading }) => {
                 onClick={() => {
                   updatePost(post.id);
                   navigate(`/admin/edit/${post.id}`);
-                  nav;
                 }}
                 className="btn1"
               >

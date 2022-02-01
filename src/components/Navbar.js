@@ -1,4 +1,6 @@
 import React from "react";
+import PropTypes from "prop-types";
+
 import { useDispatch, useSelector } from "react-redux";
 import { setAuthLoggedOut } from "../services/ActionSlice";
 import { useNavigate } from "react-router-dom";
@@ -145,6 +147,10 @@ const Navbar = () => {
       </nav>
     </>
   );
+};
+Navbar.propTypes = {
+  width: PropTypes.number,
+  height: PropTypes.number,
 };
 
 export default Navbar;

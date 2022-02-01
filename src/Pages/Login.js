@@ -1,8 +1,8 @@
 import React from "react";
 import { useState } from "react";
 import "./Login.css";
-import { useSelector, useDispatch } from "react-redux";
-import { setAuthLoggedIn, setAuthLoggedOut } from "../services/ActionSlice";
+import { useDispatch } from "react-redux";
+import { setAuthLoggedIn } from "../services/ActionSlice";
 import { useTranslation } from "react-i18next";
 
 const Login = () => {

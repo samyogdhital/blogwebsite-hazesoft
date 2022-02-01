@@ -16,20 +16,7 @@ export const blogApi = createApi({
       transformResponse: (res) => res.reverse(),
       providesTags: ["Blog"],
     }),
-    // getPostById: builder.query({
-    //   query: (id) => ({
-    //     url: `blogs/${id}`,
-    //     method: "GET",
-    //   }),
-    // }),
-    // getPostByLimit: builder.query({
-    //   query: (num) => {
-    //     return {
-    //       url: `blogs?_limit=${num}`,
-    //       method: "GET",
-    //     };
-    //   },
-    // }),
+
     deletePost: builder.mutation({
       query: (id) => {
         return {
