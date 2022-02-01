@@ -27,9 +27,9 @@ You may also see any lint errors in the console.
 
 • A non-admin user can see 10 posts per page.\
 • They can click and view the post in detail.\
-• Admin can login to the side through login button by putting email as\    ["admin@admin.com"](admin@admin.com) and password as ["admin"](admin) .\
+• Admin can login to the side through login button by putting email as ["admin@admin.com"](admin@admin.com) and password as ["admin"](admin) .\
 • Admin can edit and delete the post after succesful login.\
-• Admin can create the new post through "/admin/create" route.\
+• Admin can create the new post through "/admin/create" route.
 
 ### Features
 
