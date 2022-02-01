@@ -1,5 +1,25 @@
 {
-  "app_title": "Title",
+  "login_button": "Admin Login",
+  "logout_button": "Log Out",
+  "create_post": "Create Post",
   "language": "Language",
-  "welcome_message": "Welcome"
+
+  "Blog_Website": "Blog Website",
+  "Blogs": "Blogs",
+  "Blog_all_news": "All the latest news and contents.",
+  "Delete": "Delete",
+  "Edit": "Edit",
+  "Edit_blog": "Edit Blog",
+  "Email address": "Email Address",
+  "Password": "Password",
+  "Login": "Login",
+  "Title": "Title",
+  "Description": "Description",
+  "Submit": "Submit",
+  "Create_Blog": "Create Blog.",
+  "Edit_your_blog.": "Edit your blog.",
+  "Please Sign In": "Please Sign In",
+
+  "Back_to_homepage": "Back to homepage",
+  "Login_as_Admin": "Login as Admin"
 }

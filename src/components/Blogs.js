@@ -2,6 +2,7 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { useGetAllBlogsQuery } from "../services/BlogApi";
+import { useTranslation } from "react-i18next";
 
 import { Helmet } from "react-helmet";
 
@@ -10,6 +11,7 @@ import Posts from "./Posts";
 import "./Blogs.css";
 
 const Blogs = () => {
+  const { t } = useTranslation();
   const { data, isFetching } = useGetAllBlogsQuery();
 
   const [currentPage, setCurrentPage] = useState(1);
@@ -33,8 +35,8 @@ const Blogs = () => {
         />
       </Helmet>
       <div className="contnr mt-3">
-        <h1 className="blog mb-3">Blogs</h1>
-        <h3 className="sub-blog mb-5">All the latest news and contents.</h3>
+        <h1 className="blog mb-3">{t("Blogs")}</h1>
+        <h3 className="sub-blog mb-5">{t("Blog_all_news")}</h3>
         <div className="contain-er">
           <div className="tech_wrapper">
             <h1>

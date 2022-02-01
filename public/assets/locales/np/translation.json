@@ -1,0 +1,25 @@
+{
+  "login_button": "एड्मिन लगइन",
+  "logout_button": "लग आउट",
+  "create_post": "पोस्ट गर्नुहोस्",
+
+  "language": "भाषा",
+  "Blog_Website": "ब्लग वेबसाइट",
+  "Blogs": "ब्लगस्",
+  "Blog_all_news": "सबै नवीनतम समाचार र सामग्री ।",
+  "Delete": "हटाउनुहोस्",
+  "Edit": "सम्पादन",
+  "Edit_blog": "ब्लग सम्पादन",
+  "Email address": "इ - मेल ठेगाना",
+  "Password": "पासवर्ड",
+  "Login": "लगइन",
+  "Title": "शीर्षक",
+  "Description": "विवरण",
+  "Submit": "पेश गर्नुहोस्",
+  "Create_Blog": "ब्लग बनाउनुहोस्",
+  "Edit_your_blog": "ब्लग सम्पादन",
+  "Please Sign In": "साइन इन गर्नुहोस्",
+
+  "Back_to_homepage": "गृहपृष्ठमा फर्कनुहोस्",
+  "Login_as_Admin": "लगइन गर्नुहोस्"
+}

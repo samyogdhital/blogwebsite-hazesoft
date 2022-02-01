@@ -1,7 +1,15 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link,
+  useNavigate,
+} from "react-router-dom";
 import {
   useDeletePostMutation,
   useUpdatePostMutation,
@@ -14,6 +22,9 @@ import { AiOutlineEdit } from "react-icons/ai";
 import "./Posts.css";
 
 const Posts = ({ posts, loading }) => {
+  const { t } = useTranslation();
+
+  const navigate = useNavigate();
   const initialAuthState = useSelector((state) => state.auth.authState);
   const [updatePost] = useUpdatePostMutation();
   const [deleteBlog] = useDeletePostMutation();
@@ -35,16 +46,17 @@ const Posts = ({ posts, loading }) => {
 
           {initialAuthState && (
             <div className="buttons">
-              <Link to={`/admin/edit/${post.id}`}>
-                <button
-                  onClick={() => {
-                    updatePost(post.id);
-                  }}
-                  className="btn1"
-                >
-                  <AiOutlineEdit className="button2" /> Edit
-                </button>
-              </Link>
+              <button
+                onClick={() => {
+                  updatePost(post.id);
+                  navigate(`/admin/edit/${post.id}`);
+                  nav;
+                }}
+                className="btn1"
+              >
+                <AiOutlineEdit className="button2" /> {t("Edit")}
+              </button>
+
               <button
                 onClick={() => {
                   deleteBlog(post.id);
@@ -52,7 +64,7 @@ const Posts = ({ posts, loading }) => {
                 className="btn2"
               >
                 <MdDeleteOutline className="button1" />
-                Delete
+                {t("Delete")}
               </button>
             </div>
           )}

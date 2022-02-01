@@ -2,8 +2,10 @@ import React from "react";
 import "./Unauthenticated.css";
 import { useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet";
+import { useTranslation } from "react-i18next";
 
 const Unauthenticated = () => {
+  const { t } = useTranslation();
   const navigate = useNavigate();
   return (
     <div className="container_wrapper">
@@ -22,7 +24,7 @@ const Unauthenticated = () => {
             navigate("/login");
           }}
         >
-          Login as Admin
+          {t("Login_as_Admin")}
         </button>
       </div>
     </div>

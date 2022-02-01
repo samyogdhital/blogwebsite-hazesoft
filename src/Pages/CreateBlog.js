@@ -3,7 +3,11 @@ import "./CreateBlog.css";
 import { Helmet } from "react-helmet";
 import { useCreatePostMutation } from "../services/BlogApi";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+
 const CreateBlog = () => {
+  const { t } = useTranslation();
+
   const navigate = useNavigate();
 
   const [data, setData] = useState({
@@ -59,9 +63,9 @@ const CreateBlog = () => {
       </Helmet>
       <div className="edit_form">
         <form onSubmit={handleSubmit}>
-          <h1>Create Blog.</h1>
+          <h1>{t("Create_Blog")}</h1>
           <div className="form-contain-er">
-            <label htmlFor="Title">Title</label>
+            <label htmlFor="Title">{t("Title")}</label>
             <input
               onChange={titleHandler}
               name="title"
@@ -69,7 +73,7 @@ const CreateBlog = () => {
               type="text"
               disabled={isLoading}
             />
-            <label htmlFor="Description">Description</label>
+            <label htmlFor="Description">{t("Title")}</label>
             <textarea
               onChange={descHandler}
               value={desc}
@@ -80,7 +84,7 @@ const CreateBlog = () => {
               cols={50}
             />
             <button type="submit" disabled={isLoading}>
-              Submit
+              {t("Submit")}
             </button>
           </div>
         </form>

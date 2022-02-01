@@ -13,6 +13,7 @@
   width: 550px;
   background-color: rgba(219, 240, 211, 0.527);
   border-radius: 50px;
+  border: 1px solid grey;
 }
 .form-contain-er {
   display: flex;

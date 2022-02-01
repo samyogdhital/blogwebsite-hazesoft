@@ -2,8 +2,10 @@ import React from "react";
 import "./ErrorPage.css";
 import { useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet";
+import { useTranslation } from "react-i18next";
 
 const ErrorPage = () => {
+  const { t } = useTranslation();
   let navigate = useNavigate();
 
   return (
@@ -23,7 +25,7 @@ const ErrorPage = () => {
             navigate("/");
           }}
         >
-          Back to homepage
+          {t("Back_to_homepage")}
         </button>
       </div>
     </div>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 
 import ReactDOM from "react-dom";
 import "./index.css";
@@ -15,8 +15,8 @@ i18next
   .use(LanguageDetector)
   .use(initReactI18next)
   .init({
-    supportedLngs: ["en", "ar", "fr"],
-    fallbackLng: "en",
+    supportedLngs: ["en", "np"],
+    fallbackLng: "np",
     debug: false,
     // Options for language detector
     detection: {
@@ -28,12 +28,18 @@ i18next
       loadPath: "/assets/locales/{{lng}}/translation.json",
     },
   });
-
+const loadingMarkup = (
+  <div className="py-4 text-center">
+    <h3>Loading..</h3>
+  </div>
+);
 ReactDOM.render(
-  <React.StrictMode>
-    <Provider store={store}>
-      <App />
-    </Provider>
-  </React.StrictMode>,
+  <Suspense fallback={loadingMarkup}>
+    <React.StrictMode>
+      <Provider store={store}>
+        <App />
+      </Provider>
+    </React.StrictMode>
+  </Suspense>,
   document.getElementById("root")
 );

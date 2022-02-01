@@ -2,6 +2,8 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet";
+import { useTranslation } from "react-i18next";
+
 import {
   useGetAllBlogsQuery,
   useUpdatePostMutation,
@@ -10,6 +12,8 @@ import {
 import "./EditBlog.css";
 
 const EditBlog = () => {
+  const { t } = useTranslation();
+
   const [data, setData] = useState({
     title: "",
     body: "",
@@ -56,9 +60,9 @@ const EditBlog = () => {
       </Helmet>
       <div className="edit_form">
         <form onSubmit={handleSubmit}>
-          <h1>Edit your blog.</h1>
+          <h1>{t("Edit_your_blog")}</h1>
           <div className="form-contain-er">
-            <label htmlFor="Title">Title</label>
+            <label htmlFor="Title">{t("Title")}</label>
             <input
               onChange={handleInput}
               name="title"
@@ -66,7 +70,7 @@ const EditBlog = () => {
               type="text"
               disabled={isLoading}
             />
-            <label htmlFor="Description">Description</label>
+            <label htmlFor="Description">{t("Description")}</label>
             <textarea
               className="textArea"
               onChange={handleInput}
@@ -84,7 +88,7 @@ const EditBlog = () => {
                 isLoading || Object.values(data).every((el) => el == "")
               }
             >
-              Edit Blog
+              {t("Edit_blog")}
             </button>
           </div>
         </form>
